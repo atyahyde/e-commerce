@@ -8,6 +8,7 @@ import { Trash } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { useParams, useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { UseOrigin } from "@/hooks/use-origin";
 
 import { Heading } from "@/components/ui/heading";
 import { Button } from "@/components/ui/button";
@@ -38,6 +39,7 @@ type SettingFormValues = z.infer<typeof formSchema>;
 export const SettingForm: React.FC<SettingFormProps> = ({ initialData }) => {
   const params = useParams();
   const router = useRouter();
+  const origin = UseOrigin();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
